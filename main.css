@@ -1,0 +1,556 @@
+header {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(darkblue), to(skyblue));
+	-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	-webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;	
+}
+
+/* flexbox for first header */
+.top_nav {
+	list-style: none;
+	margin: 0px;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;  
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	text-align: center;
+	font-size: 0.8em;
+
+	border-bottom: 1px solid #fff;
+}
+
+	.top_nav > * {
+		flex: 1 100%;
+	}
+
+	.top_nav a {
+		text-decoration: none;
+		display: block;
+		color: white;
+		padding: 1em;
+	}
+
+	.search {
+		background-position: 0px;
+		border-radius: 4px 4px 4px 4px;
+		outline: none;
+		text-align: left;
+		border-color: white;
+		font-size: .8em;
+		letter-spacing: .5px;
+		margin: 0;
+		height: 29px;
+		cursor: pointer;
+		width: 100%;
+
+		background: #b0e0e6;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
+		background-image: -webkit-linear-gradient(top, #b0e0e6, #eee);
+		background-image: -moz-linear-gradient(top, #b0e0e6, #eee);
+		background-image: -ms-linear-gradient(top, #b0e0e6, #eee);
+		background-image: -o-linear-gradient(top, #b0e0e6, #eee);
+		background-image: linear-gradient(top, #b0e0e6, #eee);
+	}
+	
+	@media all and (min-width: 400px) {
+		.logo, .nav_top, .search_block { flex: 1 auto; }
+		.top_nav {
+			font-size: 0.8em;
+		}
+		.search_block {
+			margin: 10px 0;
+		}
+	}
+
+	/* flexbox for log in & registration form in first header */
+	.nav_top {
+		list-style: none;
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;  
+
+		justify-content: flex-end;
+
+		margin: auto;
+
+		text-align: center;
+		font-size: 1em;
+	}
+
+		@media all and (min-width: 400px) {
+			.nav_top ul {
+				font-size: 0.9em;
+			}
+			.nav_top {
+				margin-right: 10px;
+			}
+		}
+
+		@media all and (max-width: 400px) {
+			.nav_top ul {
+				justify-content: space-around;
+				-webkit-flex-flow: row wrap;
+				flex-flow: row wrap;
+				font-size: 0.8em;
+			}
+			.nav_top {
+				justify-content: space-around;
+				margin: 8px;
+			}
+			.nav_top #login-content {
+				zoom: .9;
+			}
+		}
+
+/* flexbox for second header (menu, basket) */
+.nav {
+	list-style: none;
+	margin: auto;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;  
+
+	justify-content: space-around;
+
+	text-align: center;
+	font-size: 1em;
+}
+	.nav_menu, #basket {
+		flex: 1 auto;
+	}
+
+	@media all and (min-width: 701px) {
+		#basket {
+			text-align: right;
+		}
+
+	}
+
+	@media all and (max-width: 700px) {
+		.nav {
+			font-size: 0.9em;
+		}
+		#basket {
+			text-align: right;
+		}
+	}
+
+	@media all and (max-width: 400px) {
+		#basket {
+			text-align: center;
+			padding-bottom: 1em;
+		}
+		.nav {
+			-webkit-flex-flow: column wrap;
+			flex-flow: column wrap;
+			font-size: 0.8em;
+		}
+	}
+
+	/* modal windows for menu */
+	.nav ul {
+		list-style: none;
+		position: relative;
+		float: center;
+		display: inline-table;
+	}
+		.nav ul li {
+			float: center;
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+		}
+		.nav ul li:hover {
+			background: #b0e0e6;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
+			background-image: -webkit-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -moz-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -ms-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -o-linear-gradient(top, #b0e0e6, #eee);
+			background-image: linear-gradient(top, #b0e0e6, #eee);
+			}
+		.nav ul li:hover > ul {display: block;}
+		.nav ul li {
+			float: left;
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+		}
+			.nav ul li a {
+				display: block;
+				color: #483d8B;
+				font-size: .9em;
+				letter-spacing: 1px;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			.nav ul ul {
+				display: none;
+				background: lightblue;
+				position: absolute; 
+				top: 100%;
+				box-shadow: -3px 3px 10px -2px rgba(0,0,0,.1);
+				border: 1px solid rgba(0,0,0,.1);
+			}
+				.nav ul ul li {
+					float: none; position: relative;
+				}
+					.nav ul ul li a {
+						padding: 15px 30px; 
+						border-bottom: 1px solid rgba(0,0,0,.05);
+					}
+
+
+/* fix log & menu */
+	.nav_top ul, .nav_menu ul {
+		list-style: none;
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;  
+
+		justify-content: flex-start;
+
+		text-align: center;
+		font-size: 1em;
+	}
+
+	@media all and (max-width: 700px) {
+		.nav_top ul, .nav_menu ul {
+			font-size: 0.9em;
+		}
+	}
+
+	@media all and (max-width: 400px) {
+		.nav_menu ul {
+			justify-content: space-around;
+			font-size: 0.9em;
+		}
+	}
+
+	@media all and (max-width: 500px) {
+		#About_company {
+			display: none;
+		}
+	}
+
+
+/*log in & registration*/
+fieldset {
+	margin: 0px;
+	padding: 1px;
+}
+
+input:focus,textarea:focus {
+	outline: none;
+}		
+	
+.nav_top ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#00ff7f), to(#98fb98));
+	-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	-webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+		
+.nav_top #login {
+	border-right: 1px solid #2e8b57;
+	-moz-box-shadow: 1px 0 0 #2e8b57;
+	-webkit-box-shadow: 1px 0 0 #2e8b57;
+	box-shadow: 1px 0 0 #2e8b57;
+}
+		
+.nav_top #login-trigger, .nav_top #signup a {
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	padding: 0 8px;
+	text-decoration: none;
+	color: darkgreen;
+	text-shadow: 0 1px 0 #fff; 
+}
+
+	.nav_top #signup a {
+		-moz-border-radius: 0 10px 10px 0;
+		-webkit-border-radius: 0 10px 10px 0;
+		border-radius: 0 10px 10px 0;
+	}
+
+	.nav_top #login-trigger {
+		-moz-border-radius: 10px 0 0 10px;
+		-webkit-border-radius: 10px 0 0 10px;
+		border-radius: 10px 0 0 10px;
+	}
+			
+	.nav_top #login-trigger:hover, .nav_top #login .active, .nav_top #signup a:hover {
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#00ff7f), to(#98fb98));
+		-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+		-webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+		box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	}
+		
+		.nav_top #login-content {
+			display: none;
+			position: absolute;
+			top: 25px;
+			right: -9px;
+			z-index: 999;    
+			background: #b0e0e6;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
+			background-image: -webkit-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -moz-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -ms-linear-gradient(top, #b0e0e6, #eee);
+			background-image: -o-linear-gradient(top, #b0e0e6, #eee);
+			background-image: linear-gradient(top, #b0e0e6, #eee);  
+			padding: 10px;
+			-moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+			-webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+			box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+		}
+				
+		#inputs input {
+			background: #f1f1f1;
+			padding: 6px 5px;
+			margin: 0 0 5px 0;
+			width: 170px;
+			border: 1px solid #ccc;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			-moz-box-shadow: 0 1px 1px #ccc inset;
+			-webkit-box-shadow: 0 1px 1px #ccc inset;
+			box-shadow: 0 1px 1px #ccc inset;
+		}
+
+		#inputs input:focus {
+			background-color: #f5f5f5;
+			border-color: #e8c291;
+			outline: none;
+			-moz-box-shadow: 0 0 0 1px #e8c291 inset;
+			-webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+			box-shadow: 0 0 0 1px #e8c291 inset;
+		}
+
+		#login #actions {
+			margin: 10px 0 0 0;
+		}
+
+		#login #submit {		
+			background-color: #d14545;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#e97171), to(#d14545));
+			background-image: -webkit-linear-gradient(top, #e97171, #d14545);
+			background-image: -moz-linear-gradient(top, #e97171, #d14545);
+			background-image: -ms-linear-gradient(top, #e97171, #d14545);
+			background-image: -o-linear-gradient(top, #e97171, #d14545);
+			background-image: linear-gradient(top, #e97171, #d14545);
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+			-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+			border: 1px solid #7e1515;
+			float: left;
+			height: 20px;
+			padding: 0;
+			width: 50px;
+			cursor: pointer;
+			font: bold 1em Helvetica;
+			color: #fff;
+		}
+				
+		#login #submit:hover, #login #submit:focus {
+			background-color: #e97171;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#d14545), to(#e97171));
+			background-image: -webkit-linear-gradient(top, #d14545, #e97171);
+			background-image: -moz-linear-gradient(top, #d14545, #e97171);
+			background-image: -ms-linear-gradient(top, #d14545, #e97171);
+			background-image: -o-linear-gradient(top, #d14545, #e97171);
+			background-image: linear-gradient(top, #d14545, #e97171);
+		}	
+				
+		#login #submit:active {
+			outline: none;
+			-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+			-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+		}
+				
+		#login #submit::-moz-focus-inner {
+			border: none;
+		}
+				
+		#login label {
+			float: right;
+			line-height: 5px;
+		}
+
+		#login label input {
+			position: relative;
+			top: 2px;
+			right: 2px;
+		}
+
+
+/* flexbox for main block*/
+.main {
+	list-style: none;
+	margin: 0px;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;  
+
+	justify-content: flex-start;
+
+	text-align: center;
+	font-size: 0.8em;
+
+	max-height: 1000px;
+}
+
+	.main_elements_block {
+		flex: 1 auto;
+	}
+
+	#new {
+		width: 20%;
+		min-width: 150px;
+		max-width: 180px;
+		height: 1000px;
+		border-right: 1px solid darkblue;
+	}
+
+	/* create flexbox for new goods in main block */
+		#new_goods {
+			list-style: none;
+			margin: 10px;
+
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;  
+
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+			justify-content: space-around;
+
+			text-align: center;
+			font-size: 1em;
+
+			border: 1px double darkblue;
+			min-width: 110px;
+		}
+
+			.new_goods {
+				border: 1px solid red;
+				text-align: center;
+				margin: 15px 0px 10px 0px;
+				height: 110px;
+				width: 110px;
+			}
+
+
+	#advertising {
+		border: 1px solid darkblue;
+		height: 200px;
+		margin: 10px;
+	}
+
+	/* create flexbox for sales in main block */
+		#sales {
+			list-style: none;
+			margin: 10px;
+
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;  
+
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+			justify-content: space-around;
+
+			text-align: center;
+			font-size: 1em;
+
+			border: 1px double darkblue;
+		}
+
+			.sales {
+				border: 1px solid red;
+				height: 110px;
+				width: 110px;
+				margin: 10px;
+			}
+
+
+	@media all and (max-width: 400px) {
+		#new, #advertising, .name, .cabinet {
+			display: none;
+		}
+	}
+
+	@media all and (max-width: 500px) {
+		.name {
+			display: none;
+		}
+	}
+
+
+/* footer */
+footer {
+	list-style: none;
+	margin: 0px;
+
+	background-image: -webkit-gradient(linear, right bottom, right top, from(darkblue), to(skyblue));
+	-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	-webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+	box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;  
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	text-align: center;
+	font-size: 0.8em;
+
+	height: 30px;
+}

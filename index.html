@@ -1,9 +1,141 @@
 <!DOCTYPE html>
-	<html>
+<html lang="en">
 	<head>
-		<title></title>
+		<meta charset="UTF-8">
+		<title>Shop</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="elements.css">
+		<script src="jquery.min.js"></script>
 	</head>
 	<body>
+		<header>
+			<div class="top_nav">
+				<a class="header logo" href="#">Logo</a>
 
+			<!-- search -->
+				<div class="search_block">
+					<form action="#">
+						<input class="search" type="search" placeholder="Перейти к покупкам!" height="100%"></input>
+					</form>
+				</div>
+
+			<!-- log in & register -->
+				<nav class="nav_top">
+					<ul>
+						<li id="login">
+							<a id="login-trigger" href="#">
+								Войти <span>&#x25BC;</span>
+							</a>
+							<div id="login-content">
+								<form>
+									<fieldset id="inputs">
+										<input id="username" type="email" name="Email" placeholder="Ваш email адрес" required>   
+										<input id="password" type="password" name="Password" placeholder="Пароль" required>
+									</fieldset>
+									<fieldset id="actions">
+										<input type="submit" id="submit" value="Войти">
+										<label><input type="checkbox" checked="checked"> Запомнить меня</label>
+									</fieldset>
+								</form>
+							</div>
+						</li>
+						<li id="signup">
+							<a href="">Регистрация</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="nav">
+
+			<!-- menu -->
+				<nav class="nav_menu">
+					<ul>
+						<li class="navigation" id="goods_list"><a href="#">Продукция</a>
+							<ul>
+								<li><a href="#">Продукт 1</a></li>
+								<li><a href="#">Продукт 2</a></li>
+								<li><a href="#">Продукт 3</a></li>
+							</ul>
+						</li>
+						<li class="navigation" id="TM"><a href="#">Торговые марки</a>
+							<ul>
+								<li><a href="#">ТМ 1</a></li>
+								<li><a href="#">ТМ 2</a></li>
+								<li><a href="#">ТМ 3</a></li>
+							</ul>
+						</li>
+						<li class="navigation" id="About_company"><a href="#">О компании</a></li>
+					</ul>
+				</nav>
+
+			<!-- basket -->
+				<div id="basket">
+					<p>Моя корзина (<span class="count">0</span>)</p>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+		<!-- new goods -->
+			<aside id="new">
+				<p>Новинки</p>
+
+			<!-- new goods list -->
+				<div id="new_goods">	
+					<div class="new_goods">
+						<p>Товар 1</p>
+					</div>
+					<div class="new_goods">
+						<p>Товар 2</p>
+					</div>
+					<div class="new_goods">
+						<p>Товар 3</p>
+					</div>
+					<div class="new_goods">
+						<p>Товар 4</p>
+					</div>
+				</div>
+		<!--  -->
+				
+			</aside>
+
+		<!-- goods sales -->
+			<div class="main_elements_block">
+			
+			<!-- advertising block -->
+				<div id="advertising">
+					<p>Прокрутка фото</p>
+				</div>
+
+			<!-- goods sales list -->
+				<main id="goods">
+					<p>Sales</p>
+					<div id="sales">
+						<div class="sales">
+							<p>Товар 1</p>
+						</div>
+						<div class="sales">
+							<p>Товар 2</p>
+						</div>
+						<div class="sales">
+							<p>Товар 3</p>
+						</div>
+						<div class="sales">
+							<p>Товар 4</p>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+
+		<footer>
+			
+		</footer>
+
+		<script type="text/javascript" src="init.js"></script>
 	</body>
 </html>
