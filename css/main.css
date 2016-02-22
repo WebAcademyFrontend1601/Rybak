@@ -445,6 +445,11 @@ header {
 		max-width: 180px;
 		height: 1000px;
 		border-right: 1px solid darkblue;
+		overflow: auto;
+	}
+
+	#new:overflow {
+		color: red;
 	}
 
 	/* create flexbox for new goods in main block */
