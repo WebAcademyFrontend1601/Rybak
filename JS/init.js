@@ -1,5 +1,6 @@
 console.log('init...');
 
+// log in menu
 $(document).ready(function(){
 	$('#login-trigger').click(function(){
 		$(this).next('#login-content').slideToggle();
@@ -9,6 +10,3 @@ $(document).ready(function(){
 			else $(this).find('span').html('&#x25BC;')
 		})
 });
-
-// <input type="search" value="Який товар Ви бажаєте?" onfocus="if (this.value==this.defaultValue)this.value="";"
-// onblur="if (this.value=="")this.value=this.defaultValue;">

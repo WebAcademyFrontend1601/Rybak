@@ -251,20 +251,17 @@ header {
 
 
 /*log in & registration*/
-fieldset {
+#login-content fieldset {
 	margin: 0px;
 	padding: 1px;
 }
-
-input:focus,textarea:focus {
-	outline: none;
-}		
 	
 .nav_top ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	position: relative;
+	z-index: 1;
 
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#00ff7f), to(#98fb98));
 	-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;

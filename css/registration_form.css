@@ -1,0 +1,177 @@
+.dialog, .dialog__overlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* centering of reg form */
+.dialog {
+	position: fixed;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+.dialog__overlay {
+	position: absolute;
+	z-index: 1;
+	background: rgba(55, 58, 71, 0.9);
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.dialog--open .dialog__overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.dialog__content {
+	width: 50%;
+	max-width: 510px;
+	min-width: 290px;
+	text-align: center;
+	position: relative;
+	z-index: 5;
+	opacity: 0;
+}
+
+.dialog--open .dialog__content {
+	pointer-events: auto;
+}
+
+
+.dialog--open .dialog__overlay {
+	-webkit-transition-duration: 1.1s;
+	transition-duration: 1.1s;
+}
+
+.dialog--close .dialog__overlay {
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+
+.dialog__content {
+	padding: 0;
+	background: transparent;
+}
+
+.dialog.dialog--open .dialog__content {
+	opacity: 1;
+}
+
+.dialog-inner {
+	opacity: 0;
+	background: #fff;
+}
+
+.dialog--open .dialog-inner {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s 0.5s;
+	transition: opacity 0.5s 0.5s;
+}
+	
+#inputs_reg input {
+		padding: 5px;
+	}
+
+#inputs_reg input {
+	background: #f1f1f1;
+	padding: 6px 1px;
+	margin: 5px;
+	width: 129px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#inputs_reg input:focus {
+	background-color: #f5f5f5;
+	border-color: #e8c291;
+	outline: none;
+	-moz-box-shadow: 0 0 0 1px #e8c291 inset;
+	-webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+	box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+#submit_reg {		
+	background-color: #d14545;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e97171), to(#d14545));
+	background-image: -webkit-linear-gradient(top, #e97171, #d14545);
+	background-image: -moz-linear-gradient(top, #e97171, #d14545);
+	background-image: -ms-linear-gradient(top, #e97171, #d14545);
+	background-image: -o-linear-gradient(top, #e97171, #d14545);
+	background-image: linear-gradient(top, #e97171, #d14545);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+	border: 1px solid #7e1515;
+	height: 20px;
+	margin: 10px;
+	width: 50px;
+	cursor: pointer;
+	font: bold 1em Helvetica;
+	color: #fff;
+	font: bold 1em serif;
+}
+		
+#submit_reg:hover, #submit_reg:focus {
+	background-color: #e97171;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d14545), to(#e97171));
+	background-image: -webkit-linear-gradient(top, #d14545, #e97171);
+	background-image: -moz-linear-gradient(top, #d14545, #e97171);
+	background-image: -ms-linear-gradient(top, #d14545, #e97171);
+	background-image: -o-linear-gradient(top, #d14545, #e97171);
+	background-image: linear-gradient(top, #d14545, #e97171);
+}	
+		
+#submit_reg:active {
+	outline: none;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+		
+#submit_reg::-moz-focus-inner {
+	border: none;
+}
+
+
+/* text decoration in reg form */
+.dialog-inner {
+	background: #cae4b6;
+	color: black;
+	font-size: 1em;
+	border-radius: 20px;
+	border: 1px solid #e97171;
+}
+
+.dialog-inner > p {
+	padding: 12px 0;
+	color: #2F4F4F;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@media all and (max-width: 950px) {
+	.dialog__content {
+		max-width: 290px;
+	}
+}
+
+@media all and (max-width: 400px) {
+	.dialog__content {
+		zoom: .8;
+	}
+}

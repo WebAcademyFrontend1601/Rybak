@@ -3,10 +3,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Shop</title>
-		<link rel="stylesheet" type="text/css" href="reset.css">
-		<link rel="stylesheet" type="text/css" href="main.css">
-		<link rel="stylesheet" type="text/css" href="elements.css">
-		<script src="jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/elements.css">
+		<link rel="stylesheet" type="text/css" href="css/registration_form.css" />
+
+		<!-- libraries for menu animation -->
+		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -16,13 +20,15 @@
 			<!-- search -->
 				<div class="search_block">
 					<form action="#">
-						<input class="search" type="search" placeholder="Перейти к покупкам!" height="100%"></input>
+						<input class="search" type="search" placeholder="  Перейти к покупкам!" height="100%"></input>
 					</form>
 				</div>
 
 			<!-- log in & register -->
 				<nav class="nav_top">
 					<ul>
+
+					<!-- log in -->
 						<li id="login">
 							<a id="login-trigger" href="#">
 								Войти <span>&#x25BC;</span>
@@ -40,8 +46,34 @@
 								</form>
 							</div>
 						</li>
+
+					<!-- registration -->
 						<li id="signup">
-							<a href="">Регистрация</a>
+							<a href="#" data-dialog="somedialog" class="trigger">Регистрация</a>
+							<div id="somedialog" class="dialog">
+								<div class="dialog__overlay"></div>
+								<div class="dialog__content">
+									<div class="dialog-inner">
+										<p>Заполните, пожалуйста, регистрационную форму</p>
+										<form>
+											<fieldset id="inputs_reg">
+												<input id="user_surname" type="text" name="Surname" placeholder="  Ваша фамилия" required>
+												<input id="user_name" type="text" name="Name" placeholder="  Ваше Имя" required>
+												<input id="user_email" type="email" name="Email" placeholder="  Ваш email адрес" required>
+												<input id="user_cellnumber" type="number" name="Cell_number" placeholder="  Контактный номер" required>
+												<input id="user_password" type="password" name="Password" placeholder="  Пароль" required>
+												<input id="user_password_repeat" type="password" name="Password_repeat" placeholder="  Повторите пароль" required>	
+												<input id="user_country" type="text" name="Country" placeholder="  Ваша страна" required>
+												<input id="user_city" type="text" name="City" placeholder="  Ваш город" required>
+												<input id="user_street" name="Street" placeholder="  Ваш адрес" required>
+											</fieldset>
+											<fieldset id="actions">
+												<input type="submit" id="submit_reg" value="Log on" class="action" data-dialog-close>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</nav>
@@ -131,11 +163,13 @@
 			</div>
 		</div>
 
-
 		<footer>
 			
 		</footer>
 
-		<script type="text/javascript" src="init.js"></script>
+		<script type="text/javascript" src="js/classie.js"></script>
+		<script type="text/javascript" src="js/dialogFx.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/registration_form_animation.js"></script>
 	</body>
 </html>
