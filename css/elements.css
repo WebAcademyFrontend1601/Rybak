@@ -14,7 +14,7 @@
 }
 
 /*оформление товаров*/
-#new > p, #goods > p {
+#goods > p {
 	margin-top: 10px;
 	font: italic bold 1em serif;
 	color: red;

@@ -14,7 +14,7 @@
 
 .sales > * {
 	flex: 1 100%;
-	border: .1px solid red;
+	/*border: .1px solid red;*/
 	margin: 1px;
 }
 

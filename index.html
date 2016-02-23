@@ -7,7 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/elements.css">
 		<link rel="stylesheet" type="text/css" href="css/goods.css">
-		<link rel="stylesheet" type="text/css" href="css/registration_form.css" />
+		<link rel="stylesheet" type="text/css" href="css/registration_form.css">
+		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css">
 
 		<!-- libraries for menu animation -->
 		<script type="text/javascript" src="js/modernizr.custom.js"></script>
@@ -105,7 +106,7 @@
 
 			<!-- basket -->
 				<div id="basket">
-					<p>Моя корзина (<span class="count">0</span>)</p>
+					<p>Моя корзина (<span class="count" count="0">0</span>)</p>
 				</div>
 			</div>
 		</header>
@@ -114,24 +115,35 @@
 
 		<!-- new goods -->
 			<aside id="new">
-				<p>Новинки</p>
 
 			<!-- new goods list -->
-				<div id="new_goods">	
-					<div class="new_goods">
-						<p>Товар 1</p>
-					</div>
-					<div class="new_goods">
-						<p>Товар 2</p>
-					</div>
-					<div class="new_goods">
-						<p>Товар 3</p>
-					</div>
-					<div class="new_goods">
-						<p>Товар 4</p>
-					</div>
+				
+				<div id="content_aside">
+
+
+					<div class="checkout">
+						<a class="checkout__button" href="#">Мой заказ</a>
+						<div class="checkout__order">
+							<div class="checkout__order-inner">
+								<table class="checkout__summary">
+									<thead>
+								        <tr><th>Ваш заказ</th><th>Цена</th></tr>
+								    </thead>
+								    <tfoot>
+								        <tr><th colspan="2">Всего <span class="checkout__total">$56.20</span></th></tr>
+								    </tfoot>
+								    <tbody>
+										<tr><td><strong class="goods_checkout">Товар 1</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
+										<tr><td><strong class="goods_checkout">Товар 2</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
+										<tr><td><strong class="goods_checkout">Товар 3</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
+										<tr><td><strong class="goods_checkout">Товар 4</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
+									</tbody>
+								</table><!-- /checkout__summary -->
+								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button><button class="checkout__option checkout__option--loud">Оформить</button>
+							</div><!-- /checkout__order-inner -->
+						</div><!-- /checkout__order -->
+					</div><!-- /checkout -->
 				</div>
-		<!--  -->
 				
 			</aside>
 
@@ -149,28 +161,28 @@
 					<div id="sales">
 						<div class="sales">
 							<p class="name_goods linesame">Товар 1</p>
-							<p class="goods_basket linesame"><img src="images/basket.png" height="10px"></p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
 							<img src="images/shopping.png" class="img_goods">
 							<p class="TM_goods sameline">TM</p>
-							<p class="price_goods sameline">$100</p>
+							<p class="price_goods sameline" price="100" count="1">$100</p>
 						</div>
 						<div class="sales">
 							<p class="name_goods linesame">Товар 2</p>
-							<p class="goods_basket linesame"><img src="images/basket.png" height="10px"></p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
 							<img src="images/shopping.png" class="img_goods">
 							<p class="TM_goods sameline">TM</p>
 							<p class="price_goods sameline">$100</p>
 						</div>
 						<div class="sales">
 							<p class="name_goods linesame">Товар 3</p>
-							<p class="goods_basket linesame"><img src="images/basket.png" height="10px"></p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
 							<img src="images/shopping.png" class="img_goods">
 							<p class="TM_goods sameline">TM</p>
 							<p class="price_goods sameline">$100</p>
 						</div>
 						<div class="sales">
 							<p class="name_goods linesame">Товар 4</p>
-							<p class="goods_basket linesame"><img src="images/basket.png" height="10px"></p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
 							<img src="images/shopping.png" class="img_goods">
 							<p class="TM_goods sameline">TM</p>
 							<p class="price_goods sameline">$100</p>
@@ -188,5 +200,6 @@
 		<script type="text/javascript" src="js/dialogFx.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>
 		<script type="text/javascript" src="js/registration_form_animation.js"></script>
+		<script type="text/javascript" src="js/checkout.js"></script>
 	</body>
 </html>
