@@ -315,7 +315,7 @@ header {
 			position: absolute;
 			top: 25px;
 			right: -9px;
-			z-index: 1;    
+			z-index: -1;    
 			background: #b0e0e6;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
 			background-image: -webkit-linear-gradient(top, #b0e0e6, #eee);
@@ -441,7 +441,7 @@ header {
 
 	#new {
 		width: 20%;
-		min-width: 150px;
+		min-width: 160px;
 		max-width: 180px;
 		height: 1000px;
 		border-right: 1px solid darkblue;
@@ -484,9 +484,8 @@ header {
 
 
 	#advertising {
-		border: 1px solid darkblue;
-		height: 200px;
-		margin: 10px;
+		/*border: 1px solid darkblue;*/
+		margin: 15px;
 	}
 
 	/* create flexbox for sales in main block */

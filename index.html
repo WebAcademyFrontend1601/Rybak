@@ -9,10 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="css/goods.css">
 		<link rel="stylesheet" type="text/css" href="css/registration_form.css">
 		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css">
+		<link rel="stylesheet" type="text/css" href="css/filter.css">
+		<link rel="stylesheet" type="text/css" href="css/filter_test.css">
 
 		<!-- libraries for menu animation -->
-		<script type="text/javascript" src="js/modernizr.custom.js"></script>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -106,40 +108,72 @@
 
 			<!-- basket -->
 				<div id="basket">
-					<p>Моя корзина (<span class="count" count="0">0</span>)</p>
+					<p>Моя корзина (<span class="count">0</span>)</p>
 				</div>
 			</div>
 		</header>
 
 		<div class="main">
 
-		<!-- new goods -->
+		<!-- aside bar -->
 			<aside id="new">
 
-			<!-- new goods list -->
+			<!-- checkout list -->
 				
 				<div id="content_aside">
-
-
 					<div class="checkout">
 						<a class="checkout__button" href="#">Мой заказ</a>
 						<div class="checkout__order">
 							<div class="checkout__order-inner">
 								<table class="checkout__summary">
 									<thead>
-								        <tr><th>Ваш заказ</th><th>Цена</th></tr>
+								        <tr>
+								        	<th>Ваш заказ</th>
+								        	<th>Q</th>
+								        	<th>Цена, &#8372;</th>
+								        	<th></th>
+								        </tr>
 								    </thead>
 								    <tfoot>
-								        <tr><th colspan="2">Всего <span class="checkout__total">$56.20</span></th></tr>
+								        <tr>
+								        	<th colspan="2">Всего <span class="checkout__total">&#8372; 56.20</span></th>
+								        </tr>
 								    </tfoot>
 								    <tbody>
-										<tr><td><strong class="goods_checkout">Товар 1</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
-										<tr><td><strong class="goods_checkout">Товар 2</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
-										<tr><td><strong class="goods_checkout">Товар 3</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
-										<tr><td><strong class="goods_checkout">Товар 4</strong> <span class="TM_checkout">ТМ</span></td><td class="price_checkout">$9.90</td></tr>
+										<tr>
+											<td><strong class="goods_checkout">Товар 1</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
+										<tr>
+											<td><strong class="goods_checkout">Товар 2</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
+										<tr>
+											<td><strong class="goods_checkout">Товар 3</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
 									</tbody>
 								</table><!-- /checkout__summary -->
-								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button><button class="checkout__option checkout__option--loud">Оформить</button>
+								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button>
+								<button class="checkout__option checkout__option--loud">Оформить</button>
 							</div><!-- /checkout__order-inner -->
 						</div><!-- /checkout__order -->
 					</div><!-- /checkout -->
@@ -153,11 +187,22 @@
 			<!-- advertising block -->
 				<div id="advertising">
 					<p>Прокрутка фото</p>
+					<div class="filter">
+						<span class="filter__label">Фильтр: </span>
+						<button class="filter__item">Все товары</button>
+						<button class="filter__item"><span>Категория 1</span></button>
+						<button class="filter__item"><span>Категория 2</span></button>
+						<button class="filter__item"><span>Категория 3</span></button>
+						<button class="filter__item"><span>Категория 4</span></button>
+						<button class="filter__item"><span>Категория 5</span></button>
+					</div>
 				</div>
 
 			<!-- goods sales list -->
 				<main id="goods">
+					
 					<p>Sales</p>
+					
 					<div id="sales">
 						<div class="sales">
 							<p class="name_goods linesame">Товар 1</p>
@@ -201,5 +246,8 @@
 		<script type="text/javascript" src="js/init.js"></script>
 		<script type="text/javascript" src="js/registration_form_animation.js"></script>
 		<script type="text/javascript" src="js/checkout.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/checkout_order.js"></script>
+
 	</body>
 </html>

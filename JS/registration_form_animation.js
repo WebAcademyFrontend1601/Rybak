@@ -1,4 +1,3 @@
-
 // registration animation
 (function() {
 

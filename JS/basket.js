@@ -1,1 +1,1 @@
-var goods_count = 0;
+$(document).ready(function() {}
