@@ -1,9 +1,253 @@
 <!DOCTYPE html>
-	<html>
+<html lang="en">
 	<head>
-		<title></title>
+		<meta charset="UTF-8">
+		<title>Shop</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/elements.css">
+		<link rel="stylesheet" type="text/css" href="css/goods.css">
+		<link rel="stylesheet" type="text/css" href="css/registration_form.css">
+		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css">
+		<link rel="stylesheet" type="text/css" href="css/filter.css">
+		<link rel="stylesheet" type="text/css" href="css/filter_test.css">
+
+		<!-- libraries for menu animation -->
+		<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
 	</head>
 	<body>
+		<header>
+			<div class="top_nav">
+				<a class="header logo" href="#">Logo</a>
+
+			<!-- search -->
+				<div class="search_block">
+					<form action="#">
+						<input class="search" type="search" placeholder="  Перейти к покупкам!" height="100%"></input>
+					</form>
+				</div>
+
+			<!-- log in & register -->
+				<nav class="nav_top">
+					<ul>
+
+					<!-- log in -->
+						<li id="login">
+							<a id="login-trigger" href="#">
+								Войти <span>&#x25BC;</span>
+							</a>
+							<div id="login-content">
+								<form>
+									<fieldset id="inputs">
+										<input id="username" type="email" name="Email" placeholder="Ваш email адрес" required>   
+										<input id="password" type="password" name="Password" placeholder="Пароль" required>
+									</fieldset>
+									<fieldset id="actions">
+										<input type="submit" id="submit" value="Войти">
+										<label><input type="checkbox" checked="checked"> Запомнить меня</label>
+									</fieldset>
+								</form>
+							</div>
+						</li>
+
+					<!-- registration -->
+						<li id="signup">
+							<a href="#" data-dialog="somedialog" class="trigger">Регистрация</a>
+							<div id="somedialog" class="dialog">
+								<div class="dialog__overlay"></div>
+								<div class="dialog__content">
+									<div class="dialog-inner">
+										<p>Заполните, пожалуйста, регистрационную форму</p>
+										<form>
+											<fieldset id="inputs_reg">
+												<input id="user_surname" type="text" name="Surname" placeholder="  Ваша фамилия" required>
+												<input id="user_name" type="text" name="Name" placeholder="  Ваше Имя" required>
+												<input id="user_email" type="email" name="Email" placeholder="  Ваш email адрес" required>
+												<input id="user_cellnumber" type="number" name="Cell_number" placeholder="  Контактный номер" required>
+												<input id="user_password" type="password" name="Password" placeholder="  Пароль" required>
+												<input id="user_password_repeat" type="password" name="Password_repeat" placeholder="  Повторите пароль" required>	
+												<input id="user_country" type="text" name="Country" placeholder="  Ваша страна" required>
+												<input id="user_city" type="text" name="City" placeholder="  Ваш город" required>
+												<input id="user_street" name="Street" placeholder="  Ваш адрес" required>
+											</fieldset>
+											<fieldset id="actions">
+												<input type="submit" id="submit_reg" value="Log on" class="action" data-dialog-close>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="nav">
+
+			<!-- menu -->
+				<nav class="nav_menu">
+					<ul>
+						<li class="navigation" id="goods_list"><a href="#">Продукция</a>
+							<ul>
+								<li><a href="#">Продукт 1</a></li>
+								<li><a href="#">Продукт 2</a></li>
+								<li><a href="#">Продукт 3</a></li>
+							</ul>
+						</li>
+						<li class="navigation" id="TM"><a href="#">Торговые марки</a>
+							<ul>
+								<li><a href="#">ТМ 1</a></li>
+								<li><a href="#">ТМ 2</a></li>
+								<li><a href="#">ТМ 3</a></li>
+							</ul>
+						</li>
+						<li class="navigation" id="About_company"><a href="#">О компании</a></li>
+					</ul>
+				</nav>
+
+			<!-- basket -->
+				<div id="basket">
+					<p>Моя корзина (<span class="count">0</span>)</p>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+		<!-- aside bar -->
+			<aside id="new">
+
+			<!-- checkout list -->
+				
+				<div id="content_aside">
+					<div class="checkout">
+						<a class="checkout__button" href="#">Мой заказ</a>
+						<div class="checkout__order">
+							<div class="checkout__order-inner">
+								<table class="checkout__summary">
+									<thead>
+								        <tr>
+								        	<th>Ваш заказ</th>
+								        	<th>Q</th>
+								        	<th>Цена, &#8372;</th>
+								        	<th></th>
+								        </tr>
+								    </thead>
+								    <tfoot>
+								        <tr>
+								        	<th colspan="2">Всего <span class="checkout__total">&#8372; 56.20</span></th>
+								        </tr>
+								    </tfoot>
+								    <tbody>
+										<tr>
+											<td><strong class="goods_checkout">Товар 1</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
+										<tr>
+											<td><strong class="goods_checkout">Товар 2</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
+										<tr>
+											<td><strong class="goods_checkout">Товар 3</strong> <span class="TM_checkout">ТМ</span></td>
+											<td class="z">
+												<input class="table_quantity">
+											</td>
+											<td class="price_checkout y">9.90</td>
+											<td class="x">
+												<button type="button" class="cancel">x</button>
+											</td>
+										</tr>
+									</tbody>
+								</table><!-- /checkout__summary -->
+								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button>
+								<button class="checkout__option checkout__option--loud">Оформить</button>
+							</div><!-- /checkout__order-inner -->
+						</div><!-- /checkout__order -->
+					</div><!-- /checkout -->
+				</div>
+				
+			</aside>
+
+		<!-- goods sales -->
+			<div class="main_elements_block">
+			
+			<!-- advertising block -->
+				<div id="advertising">
+					<p>Прокрутка фото</p>
+					<div class="filter">
+						<span class="filter__label">Фильтр: </span>
+						<button class="filter__item">Все товары</button>
+						<button class="filter__item"><span>Категория 1</span></button>
+						<button class="filter__item"><span>Категория 2</span></button>
+						<button class="filter__item"><span>Категория 3</span></button>
+						<button class="filter__item"><span>Категория 4</span></button>
+						<button class="filter__item"><span>Категория 5</span></button>
+					</div>
+				</div>
+
+			<!-- goods sales list -->
+				<main id="goods">
+					
+					<p>Sales</p>
+					
+					<div id="sales">
+						<div class="sales">
+							<p class="name_goods linesame">Товар 1</p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
+							<img src="images/shopping.png" class="img_goods">
+							<p class="TM_goods sameline">TM</p>
+							<p class="price_goods sameline" price="100" count="1">$100</p>
+						</div>
+						<div class="sales">
+							<p class="name_goods linesame">Товар 2</p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
+							<img src="images/shopping.png" class="img_goods">
+							<p class="TM_goods sameline">TM</p>
+							<p class="price_goods sameline">$100</p>
+						</div>
+						<div class="sales">
+							<p class="name_goods linesame">Товар 3</p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
+							<img src="images/shopping.png" class="img_goods">
+							<p class="TM_goods sameline">TM</p>
+							<p class="price_goods sameline">$100</p>
+						</div>
+						<div class="sales">
+							<p class="name_goods linesame">Товар 4</p>
+							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
+							<img src="images/shopping.png" class="img_goods">
+							<p class="TM_goods sameline">TM</p>
+							<p class="price_goods sameline">$100</p>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+			
+		</footer>
+
+		<script type="text/javascript" src="js/classie.js"></script>
+		<script type="text/javascript" src="js/dialogFx.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/registration_form_animation.js"></script>
+		<script type="text/javascript" src="js/checkout.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/checkout_order.js"></script>
 
 	</body>
 </html>

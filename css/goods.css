@@ -1,0 +1,58 @@
+.sales {
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;  
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.sales > * {
+	flex: 1 100%;
+	/*border: .1px solid red;*/
+	margin: 1px;
+}
+
+.sameline {
+	flex: 1 auto;
+	height: 10px;
+}
+
+.linesame {
+	flex: 1 auto;
+	height: 10px;
+	margin: .1px;
+	background: #F0FFFF;
+}
+
+.name_goods {
+	flex-grow: 6;
+	text-align: left;
+	padding-left: 3px;
+	font: bold .9em Arial;
+}
+
+.TM_goods {
+	flex-grow: 4;
+	text-align: left;
+	padding-left: 3px;
+	font: italic bold .8em Arial;
+	color:  #808080;
+}
+
+.img_goods {
+	flex-grow: 8;
+	height: 78px;
+	margin: 0;
+	padding: 0;
+}
+
+.price_goods {
+	font: italic bold .9em serif;
+	color: red;
+}

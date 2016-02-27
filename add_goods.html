@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Shop_add</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/elements.css">
+		<link rel="stylesheet" type="text/css" href="css/registration_form.css">
+		<link rel="stylesheet" type="text/css" href="css/html_add_goods.css">
+
+		<!-- libraries for menu animation -->
+		<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="top_nav">
+				<a class="header logo" href="#">Logo</a>
+
+			<!-- log in & register -->
+				<nav class="nav_top">
+					<ul>
+
+					<!-- log in -->
+						<li id="login">
+							<a id="login-trigger" href="#">
+								Войти <span>&#x25BC;</span>
+							</a>
+							<div id="login-content">
+								<form>
+									<fieldset id="inputs">
+										<input id="username" type="email" name="Email" placeholder="Ваш email адрес" required>   
+										<input id="password" type="password" name="Password" placeholder="Пароль" required>
+									</fieldset>
+									<fieldset id="actions">
+										<input type="submit" id="submit" value="Войти">
+										<label><input type="checkbox" checked="checked"> Запомнить меня</label>
+									</fieldset>
+								</form>
+							</div>
+						</li>
+
+					<!-- registration -->
+						<li id="signup">
+							<a href="#" data-dialog="somedialog" class="trigger">Регистрация</a>
+							<div id="somedialog" class="dialog">
+								<div class="dialog__overlay"></div>
+								<div class="dialog__content">
+									<div class="dialog-inner">
+										<p>Заполните, пожалуйста, регистрационную форму</p>
+										<form>
+											<fieldset id="inputs_reg">
+												<input id="user_surname" type="text" name="Surname" placeholder="  Ваша фамилия" required>
+												<input id="user_name" type="text" name="Name" placeholder="  Ваше Имя" required>
+												<input id="user_email" type="email" name="Email" placeholder="  Ваш email адрес" required>
+												<input id="user_cellnumber" type="number" name="Cell_number" placeholder="  Контактный номер" required>
+												<input id="user_password" type="password" name="Password" placeholder="  Пароль" required>
+												<input id="user_password_repeat" type="password" name="Password_repeat" placeholder="  Повторите пароль" required>	
+												<input id="user_country" type="text" name="Country" placeholder="  Ваша страна" required>
+												<input id="user_city" type="text" name="City" placeholder="  Ваш город" required>
+												<input id="user_street" name="Street" placeholder="  Ваш адрес" required>
+											</fieldset>
+											<fieldset id="actions">
+												<input type="submit" id="submit_reg" value="Log on" class="action" data-dialog-close>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div class="main2">
+			<div class="add">
+				<form id="add_goods_first">
+					<fieldset class="side1">
+						<input type="text" id="name" placeholder="Название товара"></input>
+						<input type="text" id="TM" placeholder="Торговая марка"></input>
+						<input type="number" placeholder="Цена" id="price"></input>
+						<a id="chose_file" href="#">Прикрепить фото</a>
+						<span id="chose_file_text"></span>
+						<input id="chose_file_input" name="imagefile" type="file"/>
+					</fieldset>
+					<textarea placeholder="Описание товара"></textarea>
+					<button type="submit" id="form_add_submit">Add</button>
+				</form>
+			</div>
+		</div>
+		<div class="added_goods">
+			<table id="table_goods">
+				<thead id="table_goods_head">
+					<tr>
+						<th colspan="2">Товар</th>
+						<th>Торговая марка</th>
+						<th>Цена, &#8372;</th>
+						<th>Описание</th>
+					</tr>
+				</thead>
+				<tbody id="table_goods_content">
+					<tr>
+						<td><img src="images/shopping.png" class="img_goods"></td>
+						<td class="min"><strong class="name_goods">Товар 1</strong></td>
+						<td class="TM_goods">ТМ</td>
+						<td class="price_goods">212</td>
+						<td class="description_goods">Описание</td>
+						<td>
+							<button type="button" class="cancel_goods" title="убрать из списка">x</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="images/shopping.png" class="img_goods"></td>
+						<td><strong class="name_goods">Товар 1</strong></td>
+						<td class="TM_goods">ТМ</td>
+						<td class="price_goods">212</td>
+						<td class="description_goods">Описание</td>
+						<td>
+							<button type="button" class="cancel_goods" title="убрать из списка">x</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" id="accept_new_goods">Отправить в магазин</button>
+		</div>
+
+		<script type="text/javascript" src="js/classie.js"></script>
+		<script type="text/javascript" src="js/dialogFx.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/registration_form_animation.js"></script>
+		<script type="text/javascript" src="js/for adding files (anim).js"></script>
+	</body>
+</html>
