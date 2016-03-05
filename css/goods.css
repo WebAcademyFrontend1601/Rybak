@@ -21,13 +21,13 @@
 .sameline {
 	flex: 1 auto;
 	height: 10px;
+	margin-top: 7px;
 }
 
 .linesame {
 	flex: 1 auto;
 	height: 10px;
-	margin: .1px;
-	background: #F0FFFF;
+	margin-bottom: 7px;
 }
 
 .name_goods {
@@ -35,6 +35,8 @@
 	text-align: left;
 	padding-left: 3px;
 	font: bold .9em Arial;
+	background: #FFFF00;
+	border-radius: 5px;
 }
 
 .TM_goods {
@@ -47,12 +49,21 @@
 
 .img_goods {
 	flex-grow: 8;
-	height: 78px;
+	height: 110px;
+	max-width: 160px;
 	margin: 0;
-	padding: 0;
+	padding: 3px;
 }
 
 .price_goods {
-	font: italic bold .9em serif;
+	font: bold .9em serif;
 	color: red;
+}
+
+#restriction {
+	border-top: 3px double blue;
+	margin-top: 3px;
+	padding-top: 2px;
+	color: #A9A9A9;
+	font-weight: 100;
 }

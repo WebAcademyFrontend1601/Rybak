@@ -10,13 +10,13 @@
 		<link rel="stylesheet" type="text/css" href="css/registration_form.css">
 		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css">
 		<link rel="stylesheet" type="text/css" href="css/filter.css">
-		<link rel="stylesheet" type="text/css" href="css/filter_test.css">
 
 		<!-- libraries for menu animation -->
 		<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
 		<script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="js/lib/angular.min.js"></script>
 	</head>
-	<body>
+	<body ng-app="store">
 		<header>
 			<div class="top_nav">
 				<a class="header logo" href="#">Logo</a>
@@ -24,14 +24,13 @@
 			<!-- search -->
 				<div class="search_block">
 					<form action="#">
-						<input class="search" type="search" placeholder="  Перейти к покупкам!" height="100%"></input>
+						<input ng-model="query" class="search" type="search" placeholder="  Перейти к покупкам!" height="100%"></input>
 					</form>
 				</div>
 
 			<!-- log in & register -->
 				<nav class="nav_top">
 					<ul>
-jijkh
 					<!-- log in -->
 						<li id="login">
 							<a id="login-trigger" href="#">
@@ -124,56 +123,41 @@ jijkh
 					<div class="checkout">
 						<a class="checkout__button" href="#">Мой заказ</a>
 						<div class="checkout__order">
-							<div class="checkout__order-inner">
-								<table class="checkout__summary">
-									<thead>
-								        <tr>
-								        	<th>Ваш заказ</th>
-								        	<th>Q</th>
-								        	<th>Цена, &#8372;</th>
-								        	<th></th>
-								        </tr>
-								    </thead>
-								    <tfoot>
-								        <tr>
-								        	<th colspan="2">Всего <span class="checkout__total">&#8372; 56.20</span></th>
-								        </tr>
-								    </tfoot>
-								    <tbody>
-										<tr>
-											<td><strong class="goods_checkout">Товар 1</strong> <span class="TM_checkout">ТМ</span></td>
-											<td class="z">
-												<input class="table_quantity">
-											</td>
-											<td class="price_checkout y">9.90</td>
-											<td class="x">
-												<button type="button" class="cancel">x</button>
-											</td>
-										</tr>
-										<tr>
-											<td><strong class="goods_checkout">Товар 2</strong> <span class="TM_checkout">ТМ</span></td>
-											<td class="z">
-												<input class="table_quantity">
-											</td>
-											<td class="price_checkout y">9.90</td>
-											<td class="x">
-												<button type="button" class="cancel">x</button>
-											</td>
-										</tr>
-										<tr>
-											<td><strong class="goods_checkout">Товар 3</strong> <span class="TM_checkout">ТМ</span></td>
-											<td class="z">
-												<input class="table_quantity">
-											</td>
-											<td class="price_checkout y">9.90</td>
-											<td class="x">
-												<button type="button" class="cancel">x</button>
-											</td>
-										</tr>
-									</tbody>
-								</table><!-- /checkout__summary -->
-								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button>
-								<button class="checkout__option checkout__option--loud">Оформить</button>
+							<div class="checkout__order-inner" ng-controller="preOrder as pre" ng-show="pre.myGoods.length>0">
+								<form ng-submit="pre.preOrderForm()">
+									<table class="checkout__summary" ng-show="pre.myGoods.length">
+										<thead>
+									        <tr>
+									        	<th>Ваш заказ</th>
+									        	<th>Q</th>
+									        	<th>Цена, &#8372;</th>
+									        	<th></th>
+									        </tr>
+									    </thead>
+									    <tfoot>
+									        <tr>
+									        	<th colspan="2">Всего
+									        		<span>&#8372; </span>
+									        		<span class="checkout__total"></span>
+									        	</th>
+									        </tr>
+									    </tfoot>
+									    <tbody ng-repeat="myProduct in pre.myGoods" ng-show="myProduct.quantity>0">
+											<tr>
+												<td><strong class="goods_checkout">{{myProduct.name}}</strong> <span class="TM_checkout"> // {{myProduct.TM}}</span></td>
+												<td class="z">{{myProduct.quantity}}
+													<!-- <input class="table_quantity"> -->
+												</td>
+												<td class="price_checkout y">{{myProduct.price | currency:"&#8372;"}}</td>
+												<td class="x">
+													<button ng-click="pre.removeGoods(myProduct)" type="button" class="cancel">x</button>
+												</td>
+											</tr>
+										</tbody>
+									</table><!-- /checkout__summary -->
+									<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button>
+									<button type="submit" class="checkout__option checkout__option--loud">Оформить</button>
+								</form>
 							</div><!-- /checkout__order-inner -->
 						</div><!-- /checkout__order -->
 					</div><!-- /checkout -->
@@ -189,12 +173,11 @@ jijkh
 					<p>Прокрутка фото</p>
 					<div class="filter">
 						<span class="filter__label">Фильтр: </span>
-						<button class="filter__item">Все товары</button>
-						<button class="filter__item"><span>Категория 1</span></button>
-						<button class="filter__item"><span>Категория 2</span></button>
-						<button class="filter__item"><span>Категория 3</span></button>
-						<button class="filter__item"><span>Категория 4</span></button>
-						<button class="filter__item"><span>Категория 5</span></button>
+						<button class="filter__item" ng-click="query = ''">Все товары</button>
+						<button class="filter__item" ng-click="query = 'Apple'"><span>Apple</span></button>
+						<button class="filter__item" ng-click="query = 'Samsung'"><span>Samsung</span></button>
+						<button class="filter__item" ng-click="query = 'Huawei'"><span>Huawei</span></button>
+						<button class="filter__item" ng-click="query = 'Lenovo'"><span>Lenovo</span></button>
 					</div>
 				</div>
 
@@ -203,34 +186,16 @@ jijkh
 					
 					<p>Sales</p>
 					
-					<div id="sales">
-						<div class="sales">
-							<p class="name_goods linesame">Товар 1</p>
-							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
-							<img src="images/shopping.png" class="img_goods">
-							<p class="TM_goods sameline">TM</p>
-							<p class="price_goods sameline" price="100" count="1">$100</p>
-						</div>
-						<div class="sales">
-							<p class="name_goods linesame">Товар 2</p>
-							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
-							<img src="images/shopping.png" class="img_goods">
-							<p class="TM_goods sameline">TM</p>
-							<p class="price_goods sameline">$100</p>
-						</div>
-						<div class="sales">
-							<p class="name_goods linesame">Товар 3</p>
-							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
-							<img src="images/shopping.png" class="img_goods">
-							<p class="TM_goods sameline">TM</p>
-							<p class="price_goods sameline">$100</p>
-						</div>
-						<div class="sales">
-							<p class="name_goods linesame">Товар 4</p>
-							<p class="goods_basket linesame"><a href="#" class="add"><img src="images/basket.png" height="10px"></a></p>
-							<img src="images/shopping.png" class="img_goods">
-							<p class="TM_goods sameline">TM</p>
-							<p class="price_goods sameline">$100</p>
+					<div id="sales" ng-controller="StoreController as store">
+						<div class="sales" ng-repeat="product in store.products | filter:query" ng-show="product.TotalQuantity>0">
+							<p class="name_goods linesame">{{product.name}}</p>
+							<p class="goods_basket linesame"><a href="" class="add" ng-click="store.preorderGoods(product)"><img src="images/basket.png" height="15px"></a></p>
+							<img ng-src="{{product.images}}" class="img_goods">
+							<p class="TM_goods sameline">{{product.TM}}</p>
+							<p class="price_goods sameline" price="100" count="1">{{product.price | currency:"&#8372;"}}</p>
+							<div id="restriction">
+								<p>В магазине осталось</p><p>{{product.TotalQuantity}} шт.</p>
+							</div>
 						</div>
 					</div>
 				</main>
@@ -241,13 +206,17 @@ jijkh
 			
 		</footer>
 
-		<script type="text/javascript" src="js/classie.js"></script>
-		<script type="text/javascript" src="js/dialogFx.js"></script>
-		<script type="text/javascript" src="js/init.js"></script>
-		<script type="text/javascript" src="js/registration_form_animation.js"></script>
-		<script type="text/javascript" src="js/checkout.js"></script>
-		<script type="text/javascript" src="js/filter.js"></script>
-		<script type="text/javascript" src="js/checkout_order.js"></script>
+		
+		
+		<script type="text/javascript" src="js/animation/checkout.js"></script>
+		<script type="text/javascript" src="js/animation/drop_down_login.js"></script>
+		
+		<script type="text/javascript" src="js/lib/classie.js"></script>
+		<script type="text/javascript" src="js/lib/dialogFx.js"></script>
+
+
+		<script type="text/javascript" src="js/animation/registration_form_animation.js"></script>
+		<script type="text/javascript" src="js/main page/main.js"></script>
 
 	</body>
 </html>

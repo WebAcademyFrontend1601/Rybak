@@ -2,7 +2,7 @@ header {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(darkblue), to(skyblue));
 	-moz-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
 	-webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
-	box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;	
+	box-shadow: 0 -3px 3px rgba(0,0,0,.5) inset;
 }
 
 /* flexbox for first header */
@@ -39,10 +39,10 @@ header {
 
 	.search {
 		background-position: 0px;
-		border-radius: 4px 4px 4px 4px;
+		border-radius: 30px;
 		outline: none;
 		text-align: left;
-		border-color: white;
+		border-color: gray;
 		font-size: .8em;
 		letter-spacing: .5px;
 		margin: 0;
@@ -432,27 +432,25 @@ header {
 	text-align: center;
 	font-size: 0.8em;
 
-	max-height: 1000px;
+	max-height: 800px;
 }
 
 	.main_elements_block {
 		flex: 1 auto;
+		/*border: solid red;*/
+		overflow: auto;
 	}
 
 	#new {
 		width: 20%;
 		min-width: 160px;
 		max-width: 180px;
-		height: 1000px;
+		min-height: 700px;
 		border-right: 1px solid darkblue;
 		overflow: auto;
 		background: #E6E6FA;
 	}
 
-	/*#new:overflow {
-		color: red;
-	}
-*/
 	/* create flexbox for new goods in main block */
 		#content_aside {
 			list-style: none;
@@ -510,10 +508,9 @@ header {
 		}
 
 			.sales {
-				/*border: 1px solid red;*/
-				height: 110px;
-				width: 110px;
+				width: 160px;
 				margin: 10px;
+				margin: 30px;
 			}
 
 
@@ -526,6 +523,12 @@ header {
 	@media all and (max-width: 500px) {
 		.name {
 			display: none;
+		}
+	}
+
+	@media all and (max-width: 700px) {
+		.sales {
+			margin: 10px;
 		}
 	}
 

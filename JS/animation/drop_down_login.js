@@ -1,5 +1,3 @@
-console.log('init...');
-
 // log in menu
 $(document).ready(function(){
 	$('#login-trigger').click(function(){

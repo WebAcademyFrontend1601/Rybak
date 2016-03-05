@@ -10,6 +10,6 @@ $(function (){
 
     $('#chose_file_input').change(function(){
      $('#chose_file_text').html($(this).val());
-    }).change(); // .change() в конце для того чтобы событие сработало при обновлении страницы
+    }).change();
    }
 });

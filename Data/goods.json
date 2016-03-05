@@ -1,0 +1,23 @@
+[
+	{
+	"name": "Товар Х",
+	"TM": "Добряна",
+	"price": 12,
+	"description": "масло",
+	"images": "images/shopping.png"
+	},
+	{
+	"name": "Товар Y",
+	"TM": "Apple",
+	"price": 40,
+	"description": "notebook",
+	"images": "images/shopping.png"
+	},
+	{
+	"name": "Товар Z",
+	"TM": "Sumsung",
+	"price": 30,
+	"description": "phone",
+	"images": "images/shopping.png"
+	}
+]
