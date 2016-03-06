@@ -67,16 +67,12 @@
 		// function for submit customers preorder
 		this.preOrderForm = function() {
 			
-			console.dir(preOrderGoods);
+			console.log(preOrderGoods);
 
 			// $(".main_elements_block").fadeOut();
 		};
-
-		// $(".checkout__cancel").click (function(){
-		// 	$(".main_elements_block").show();
-		// });
-
 	});
+	
 
 	var preOrderGoods = []
 
