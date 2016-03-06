@@ -86,7 +86,10 @@
 						<fieldset class="side1">
 							<input ng-model="AddCtrl.product.name" type="text" id="name" placeholder="Название товара" required ng-minlength="2"></input>
 							<input ng-model="AddCtrl.product.TM" type="text" id="TM" placeholder="Торговая марка" required ng-minlength="1"></input>
-							<input ng-model="AddCtrl.product.price" type="number" placeholder="Цена" id="price" required ng-minlength="1"></input>
+							<div>
+								<input ng-model="AddCtrl.product.price" type="number" placeholder="Цена" id="price" required ng-minlength="1"></input>
+								<input ng-model="AddCtrl.product.TotalQuantity" type="number" placeholder="Количество товара" id="TotalQuantity" required ng-minlength="1"></input>
+							</div>
 							<a id="chose_file" href="#">Прикрепить фото</a>
 							<span id="chose_file_text"></span>
 							<input ng-model="AddCtrl.product.images" id="chose_file_input" name="imagefile" type="file"/>
@@ -100,30 +103,34 @@
 
 
 			<div class="added_goods" ng-show="store.products.length">
-				<table id="table_goods">
-					<thead id="table_goods_head">
-						<tr>
-							<th colspan="2">Товар</th>
-							<th>Торговая марка</th>
-							<th>Цена, &#8372;</th>
-							<th>Описание</th>
-						</tr>
-					</thead>
+			<form ng-submit="store.submitForm()">
+					<table id="table_goods">
+						<thead id="table_goods_head">
+							<tr>
+								<th colspan="2">Товар</th>
+								<th>Торговая марка</th>
+								<th>Цена, &#8372;</th>
+								<th>Количество, шт.</th>
+								<th>Описание</th>
+							</tr>
+						</thead>
 
-					<tbody id="table_goods_content">
-						<tr ng-repeat="product in store.products">
-							<td><img ng-src="{{product.images}}" class="img_goods"></td>
-							<td class="min"><strong class="name_goods">{{product.name}}</strong></td>
-							<td class="TM_goods">{{product.TM}}</td>
-							<td class="price_goods">{{product.price | currency:"&#8372;"}}</td>
-							<td class="description_goods">{{product.description}}</td>
-							<td>
-								<button ng-click="store.removeGoods(product)" type="button" class="cancel_goods" title="убрать из списка">x</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<button type="submit" id="accept_new_goods">Отправить в магазин</button>
+						<tbody id="table_goods_content">
+							<tr ng-repeat="product in store.products">
+								<td><img ng-src="{{product.images}}" class="img_goods"></td>
+								<td class="min"><strong class="name_goods">{{product.name}}</strong></td>
+								<td class="TM_goods">{{product.TM}}</td>
+								<td class="price_goods">{{product.price | currency:"&#8372;"}}</td>
+								<td class="price_goods">{{product.TotalQuantity}}</td>
+								<td class="description_goods">{{product.description}}</td>
+								<td>
+									<button ng-click="store.removeGoods(product)" type="button" class="cancel_goods" title="убрать из списка">x</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<button type="submit" id="accept_new_goods">Отправить в магазин</button>
+				</form>
 			</div>
 		</div>
 

@@ -10,9 +10,9 @@
 		this.product = {};
 
 		this.addGoods = function() {
+			this.product.quantity = 0;
 			goods.push(this.product);
 			this.product = {};
-			console.dir(goods);
 		};
 	})
 
@@ -22,6 +22,10 @@
 		this.removeGoods = function(product) {
 			var index = goods.indexOf(product);
 			goods.splice(index,1);
+		};
+
+		this.submitForm = function() {
+			console.dir(goods);
 		};
 	});
 

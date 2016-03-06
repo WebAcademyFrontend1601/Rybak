@@ -60,6 +60,7 @@
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+	text-align: center;
 	outline: none;
 }
 
@@ -70,6 +71,14 @@
 	-moz-box-shadow: 0 0 0 1px #e8c291 inset;
 	-webkit-box-shadow: 0 0 0 1px #e8c291 inset;
 	box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+#price {
+	width: 60px;
+}
+
+#TotalQuantity {
+	width: 122px;
 }
 
 #chose_file{
@@ -251,7 +260,7 @@ td:last-child {
 	}
 }
 
-@media all and (max-width: 540px) {
+@media all and (max-width: 500px) {
 	textarea {
 		height: 50px;
 	}
