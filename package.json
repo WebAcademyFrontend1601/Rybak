@@ -1,0 +1,14 @@
+{
+"name": "my_shop",
+"version": "0.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"start": "node index.js"
+},
+"author": "onomatopio",
+"license": "MIT",
+"devDependencies": {
+"browser-sync": "^2.11.1"
+}
+}

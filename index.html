@@ -12,9 +12,12 @@
 		<link rel="stylesheet" type="text/css" href="css/filter.css">
 
 		<!-- libraries for menu animation -->
+		
 		<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
 		<script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
 		<script type="text/javascript" src="js/lib/angular.min.js"></script>
+		<script type="text/javascript" src="js/lib/firebase.js"></script>
+		<script type="text/javascript" src="js/lib/angularfire.min.js"></script>
 	</head>
 	<body ng-app="store">
 		<header>
@@ -146,9 +149,7 @@
 									    <tbody ng-repeat="myProduct in pre.myGoods" ng-show="myProduct.quantity>0">
 											<tr>
 												<td><strong class="goods_checkout">{{myProduct.name}}</strong> <span class="TM_checkout"> // {{myProduct.TM}}</span></td>
-												<td class="z">{{myProduct.quantity}}
-													<!-- <input class="table_quantity"> -->
-												</td>
+												<td class="z">{{myProduct.quantity}}</td>
 												<td class="price_checkout y">{{myProduct.price | currency:"&#8372;"}}</td>
 												<td class="x">
 													<button ng-click="pre.removeGoods(myProduct)" type="button" class="cancel">x</button>
@@ -157,7 +158,10 @@
 										</tbody>
 									</table><!-- /checkout__summary -->
 									<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Продолжить покупки</button>
+									<input id="order_cellphone" type="number" placeholder="ваш номер телефона" class="checkout__option order_input" required></input>
+									<input id="order_name" placeholder="Ваше ФИО" class="checkout__option order_input" required></input>
 									<button type="submit" class="checkout__option checkout__option--loud">Оформить</button>
+									<p id="success">Спасибо! Ваш заказ принят!<p>
 								</form>
 							</div><!-- /checkout__order-inner -->
 						</div><!-- /checkout__order -->

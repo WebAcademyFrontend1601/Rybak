@@ -48,7 +48,7 @@ header {
 		margin: 0;
 		height: 29px;
 		cursor: pointer;
-		width: 100%;
+		width: 40%;
 
 		background: #b0e0e6;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
@@ -71,6 +71,7 @@ header {
 
 	/* flexbox for log in & registration form in first header */
 	.nav_top {
+
 		list-style: none;
 
 		display: -webkit-box;
@@ -82,6 +83,8 @@ header {
 		justify-content: flex-end;
 
 		margin: auto;
+
+		display: none;
 
 		text-align: center;
 		font-size: 1em;

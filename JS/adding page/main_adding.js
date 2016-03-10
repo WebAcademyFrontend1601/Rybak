@@ -11,6 +11,7 @@
 
 		this.addGoods = function() {
 			this.product.quantity = 0;
+			
 			goods.push(this.product);
 			this.product = {};
 		};
