@@ -48,7 +48,8 @@ header {
 		margin: 0;
 		height: 29px;
 		cursor: pointer;
-		width: 40%;
+		width: 100%;
+		max-width: 300px;
 
 		background: #b0e0e6;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#b0e0e6), to(#eee));
