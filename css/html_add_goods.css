@@ -310,9 +310,9 @@ td:last-child {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(green), to(#98fb98));
 }
 
-.nav_top {
+/*.nav_top {
 	display: flex;
-}
+}*/
 
 .first {
 	background: none;

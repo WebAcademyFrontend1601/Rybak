@@ -62,18 +62,18 @@
 			//
 			
 			dataGoods = JSON.parse(yy);
-			console.log(dataGoods);
-			GoodsData.push(dataGoods);
 
 
-				GoodsData.on('value', function(snapshot) {
-					var base = snapshot.val();
+			// recieve data from base and modify it
+			GoodsData.on('value', function(snapshot) {
+				var base = snapshot.val();
+				Array.prototype.push.apply(base, dataGoods);
 
+				console.log(base);
 
-					console.log(snapshot.val());
-					// console.log(snapshot.child('shop goods'));
-					// console.log(snapshot.key());
-				});
+				GoodsData.set(base);
+
+			});
 		};
 	});
 
@@ -85,48 +85,7 @@
 			this.products = $firebaseArray(goods);
 
 			this.removeGoods = function(product) {
-				// console.log(product.$id);
-				// console.log(product);
-
-				// goods.remove(snapshot.key());
-				// var index = products.indexOf(product);
-				goods.on('value', function(snapshot) {
-					console.log(product.$id);
-					var base = snapshot.val();
-					delete base[product.$id];
-					console.log(base);
-				});
-
-
-				// goods.on('child_added', function(snapshot) {
-				// 	// console.log(snapshot.key());
-				// 	console.log(snapshot.child(0));
-				// 	// console.log(snapshot.key());
-				// });
-
-				// x = $firebaseArray(goods.child('shop goods').child());
-				// console.log(x);
 			}
 		}
 	]);
-
-	// view orders in store
-	// app.controller('OrdersCtrl', ['$firebaseArray', function($firebaseArray){
-			
-	// 		// synchronize array
-	// 		var orders_ = new Firebase('https://shop-data.firebaseio.com/Customers%20order/-KCfptOmGC1-uGkQZ3Ef');
-	// 		this.orders = $firebaseArray(orders_);
-	// 	}
-	// ]);
-
-
-
-
-	// app.directive('loginRegistration', function() {
-	// 	return {
-	// 		restrict: 'E',
-	// 		templateUrl: 'login-registration.html'
-	// 	};
-	// });
-
 })();
