@@ -10,8 +10,6 @@
 		this.product = {};
 
 		// adding img func
-
-
 		function readFile() {
 			if (this.files && this.files[0]) {
 				var FR= new FileReader();
@@ -63,17 +61,21 @@
 			
 			dataGoods = JSON.parse(yy);
 
-
 			// recieve data from base and modify it
 			GoodsData.on('value', function(snapshot) {
 				var base = snapshot.val();
 				Array.prototype.push.apply(base, dataGoods);
 
 				console.log(base);
+				dataGoods = [];
+				console.log(dataGoods);
 
 				GoodsData.set(base);
-
 			});
+
+			setTimeout(function(){
+				document.location.reload()
+			}, 3000);
 		};
 	});
 
@@ -85,6 +87,8 @@
 			this.products = $firebaseArray(goods);
 
 			this.removeGoods = function(product) {
+				var index = this.products.indexOf(product);
+				this.products.$remove(index);
 			}
 		}
 	]);

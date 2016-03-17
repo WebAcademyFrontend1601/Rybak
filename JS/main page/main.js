@@ -132,15 +132,6 @@
 			setTimeout(function(){
 				document.location.reload()
 			}, 500);
-
-			// var COrder = new Firebase('https://shop-data.firebaseio.com/Customers%20order/' + document.getElementById("order_cellphone").value)
-		
-
-			// COrder.on('child_added', function(snapshot) {
-			// 	console.log(snapshot.val());
-			// 	console.log(snapshot.key());
-			// });
-			
 		};
 	});
 	
